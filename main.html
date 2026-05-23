@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DaanDoesWindowsStuff</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://apis.google.com/js/platform.js"></script>
 </head>
 <body>
 
-<!-- The moving container wraps everything so the whole page can shift -->
+<!-- SECRET VIDEO POP-UP -->
+<div id="secret-zone" style="display: none;">
+    <button id="play-btn">▶ PLAY VIDEO</button><br><br>
+    <video id="secret-video" width="640" height="360" style="display: none;" controls>
+        <source src="Video.Mp4" type="video/mp4">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- STATIC MAIN CONTENT -->
 <div id="page-container">
 
     <h1 style="background-color:Tomato; color: white; padding: 10px; border-radius: 5px;">Welcome to Daan's website</h1> 
 
-    <!-- THE COUNTER INTERFACE -->
     <div style="margin: 20px 0;">
         <button id="counter-btn">Press Me</button>
         <h2 id="counter-display">Clicks: 0</h2>
-    </div>
-
-    <!-- SECRET PLAY BUTTON & VIDEO CONTROLS -->
-    <div id="secret-zone" style="display: none; margin: 20px 0;">
-        <button id="play-btn">▶ PLAY VIDEO</button><br><br>
-        <video id="secret-video" width="640" height="360" style="display: none;">
-            <source src="Video.Mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
     </div>
 
     <h1>---------------------</h1>

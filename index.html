@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify if your a human</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        function onSuccess(token) {
+            window.location.href = "./main.html";
+        }
+    </script>
 </head>
 <body>
+
 <h1 style="background-color:Tomato;">Welcome to Daan's website</h1> 
 <h1>---------------------</h1>
 <h1>Checking if your a human!</h1>
+
 <form method="POST">
-  <div class="h-captcha" data-sitekey="9af4ecf6-925e-49c8-9168-51feab3e6ba2"></div>
+  <div class="h-captcha" 
+       data-sitekey="9af4ecf6-925e-49c8-9168-51feab3e6ba2" 
+       data-callback="onSuccess">
+  </div>  
   <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </form>
-<h1>------------</h1>
-  <h1 style="background-color:Gray;">powered by github pages</h1>
-<script>
-        function onSuccess(token) {
-            window.location.href = "main.html";
-        }
-    </script>
+
+<h1>------------</h1>  
+<h1 style="background-color:Gray;">powered by github pages</h1>
+
 </body>
 </html>

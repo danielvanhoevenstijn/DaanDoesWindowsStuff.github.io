@@ -1,4 +1,40 @@
 window.addEventListener('DOMContentLoaded', () => {
+    let clicks = 0;
+    let shiftInterval = null;
+    let currentShift = 0;
+
+    const counterBtn = document.getElementById('counter-btn');
+    const counterDisplay = document.getElementById('counter-display');
+    const secretZone = document.getElementById('secret-zone');
+    const playBtn = document.getElementById('play-btn');
+    const secretVideo = document.getElementById('secret-video');
+    const pageContainer = document.getElementById('page-container');
+
+    counterBtn.addEventListener('click', () => {
+        clicks++;
+        counterDisplay.innerText = `Clicks: ${clicks}`;
+
+        // Check if user crossed the 200 threshold
+        if (clicks > 200 && !shiftInterval) {
+            
+            // 1. Reveal the secret play button block
+            secretZone.style.display = 'block';
+
+            // 2. Start shifting the page by 50 pixels every single second (1000ms)
+            shiftInterval = setInterval(() => {
+                currentShift += 50;
+                pageContainer.style.left = currentShift + 'px';
+            }, 1000);
+        }
+    });
+
+    // Handle clicking the green play button
+    playBtn.addEventListener('click', () => {
+        playBtn.style.display = 'none'; // Hide play button
+        secretVideo.style.display = 'block'; // Show video element
+        secretVideo.play(); // Play Video.Mp4
+    });
+});window.addEventListener('DOMContentLoaded', () => {
     const fonts = [
         // --- SERIF & CLASSIC ---
         "Times New Roman", "Georgia", "Garamond", "Palatino Linotype", "Book Antiqua", 

@@ -1,4 +1,64 @@
-/* Import clean, modern fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    padding: 20px;
+    margin: 0;
+    overflow-x: hidden; /* Prevents a giant bottom scrollbar when the page shifts right */
+}
+
+/* This allows the entire website layout to move across the screen */
+#page-container {
+    position: relative;
+    left: 0px;
+    width: 100%;
+}
+
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Custom looks for your clicker buttons */
+#counter-btn, #play-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #38bdf8;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#counter-btn:hover, #play-btn:hover {
+    background-color: #0ea5e9;
+}
+
+#play-btn {
+    background-color: #22c55e; /* Green play button */
+}
+#play-btn:hover {
+    background-color: #16a34a;
+}
+
+a {
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+a:hover {
+    color: #0ea5e9;
+    text-decoration: underline;
+}/* Import clean, modern fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@700&display=swap');
 
 /* Apply a clean background and the main font to the whole page */

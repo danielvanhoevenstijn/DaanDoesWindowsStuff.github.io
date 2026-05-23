@@ -7,14 +7,24 @@ body {
     color: #ffffff; 
     padding: 20px;
     margin: 0;
-    overflow-x: hidden; /* Prevents a giant bottom scrollbar when the page shifts right */
 }
 
-/* This allows the entire website layout to move across the screen */
 #page-container {
-    position: relative;
-    left: 0px;
     width: 100%;
+}
+
+/* Centers the secret overlay right over the middle of the screen */
+#secret-zone {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.95); /* Nice dark backdrop */
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #22c55e;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
 }
 
 h1, h2 {
@@ -22,7 +32,6 @@ h1, h2 {
     letter-spacing: 1px;
 }
 
-/* Custom looks for your clicker buttons */
 #counter-btn, #play-btn {
     padding: 15px 30px;
     font-size: 18px;
@@ -35,12 +44,12 @@ h1, h2 {
     font-weight: bold;
 }
 
-#counter-btn:hover, #play-btn:hover {
+#counter-btn:hover {
     background-color: #0ea5e9;
 }
 
 #play-btn {
-    background-color: #22c55e; /* Green play button */
+    background-color: #22c55e; 
 }
 #play-btn:hover {
     background-color: #16a34a;
@@ -57,39 +66,5 @@ a {
 
 a:hover {
     color: #0ea5e9;
-    text-decoration: underline;
-}/* Import clean, modern fonts from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@700&display=swap');
-
-/* Apply a clean background and the main font to the whole page */
-body {
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    background-color: #1a1a1a; /* Dark sleek background */
-    color: #ffffff; /* Crisp white text */
-    padding: 20px;
-    margin: 0;
-}
-
-/* Give your titles a cool tech/gaming vibe */
-h1 {
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 1px;
-    margin: 20px 0;
-}
-
-/* Style your social links so they look like clean buttons */
-a {
-    font-family: 'Inter', sans-serif;
-    display: inline-block;
-    color: #38bdf8; /* Nice sky blue */
-    text-decoration: none;
-    font-weight: 600;
-    margin: 8px 0;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #0ea5e9; /* Darker blue when hovering */
     text-decoration: underline;
 }

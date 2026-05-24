@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DaanDoesWindowsStuff</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="discordInvite.css">
+    <script src="discordInvite.js"></script>
+<script>
+  discordInvite.init({
+  inviteCode: 'CCSYuXfep6',
+  title: 'Daans server',
+});
+discordInvite.render();
+</script>
 </head>
 <body>
 
-<!-- SECRET VIDEO POP-UP -->
 <div id="secret-zone" style="display: none;">
     <button id="play-btn">▶ PLAY VIDEO</button><br><br>
     <video id="secret-video" width="640" height="360" style="display: none;" controls>
@@ -18,7 +26,6 @@
     </video>
 </div>
 
-<!-- STATIC MAIN CONTENT -->
 <div id="page-container">
 
     <h1 style="background-color:Tomato; color: white; padding: 10px; border-radius: 5px;">Welcome to Daan's website</h1> 
@@ -36,13 +43,17 @@
     <h1>--------------------</h1>
 
     <h1>My socials</h1>
-
+    <p></p>
     <a href="https://www.youtube.com/@DaanDoesWindowsStuff/">My youtube</a>
+    <p></p>
     <a href="https://www.twitch.tv/daan_plays_minecraft">My twitch</a><br>
+    <p></p>
     <a href="https://whatsapp.com/channel/0029Vb80OGY2f3EGURoovz0L">My Whatsapp Group</a><br>
+    <p></p>
     <a href="https://www.reddit.com/r/DaanDoesWindowsStuffs/">My own Reddit sub</a><br>
-    <a href="https://discord.gg/CCSYuXfep6">My Discord server</a>
-
+    <p></p>
+    <div id="discordInviteBox"></div>
+    <p></p>
     <h1>------------</h1>
       
     <h1 style="background-color:Gray; color: white; padding: 10px; border-radius: 5px;">powered by github pages</h1>

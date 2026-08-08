@@ -7,6 +7,7 @@ body {
     color: #ffffff; 
     padding: 20px;
     margin: 0;
+    body { display: none; }
 }
 
 #page-container {

@@ -50,11 +50,16 @@ discordInvite.render();
 </div>
 
 <script>
+  if (navigator.webdriver || window.document.documentElement.getAttribute("webdriver")) {
+    alert("nice try");
+    window.location.href = "about:blank";
+  } else {
     if (sessionStorage.getItem('captchaPassed') === 'true') {
       document.write('<style>body{display:block !important;}</style>');
     } else {
       window.location.href = 'index.html';
     }
+  }
 </script>
 </body>
 </html>

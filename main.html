@@ -47,7 +47,9 @@ discordInvite.render();
 </div>
 
 <script>
-    if (sessionStorage.getItem('captchaPassed') !== 'true') {
+    if (sessionStorage.getItem('captchaPassed') === 'true') {
+      document.write('<style>body{display:block !important;}</style>');
+    } else {
       window.location.href = 'index.html';
     }
 </script>

@@ -8,6 +8,7 @@
     <style>
     body { display: none; }
   </style>
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
     <link rel="stylesheet" href="discordInvite.css">
     <script src="discordInvite.js"></script>
 <script>
@@ -50,16 +51,43 @@ discordInvite.render();
 </div>
 
 <script>
-  if (navigator.webdriver || window.document.documentElement.getAttribute("webdriver")) {
-    alert("nice try");
-    window.location.href = "about:blank";
-  } else {
-    if (sessionStorage.getItem('captchaPassed') === 'true') {
+  (function() {
+    function isHeadless() {
+      const ua = navigator.userAgent.toLowerCase();
+      
+      if (navigator.webdriver || window.document.documentElement.getAttribute("webdriver")) return true;
+      
+      if (!navigator.languages || navigator.languages.length === 0) return true;
+      
+      if (window.callPhantom || window._phantom || window.__nightmare) return true;
+      
+      if (ua.includes("headlesschrome") || ua.includes("phantomjs")) return true;
+
+      return false;
+    }
+
+    if (isHeadless()) {
+      alert("nice try");
+      window.location.href = "about:blank";
+      return;
+    }
+
+    if (!document.referrer.includes('index.html')) {
+      window.location.href = 'index.html';
+      return;
+    }
+
+    const passedTime = parseInt(sessionStorage.getItem('captchaPassedTime') || '0', 10);
+    const tenMinutes = 10 * 60 * 1000;
+    const isSessionValid = passedTime > 0 && (Date.now() - passedTime < tenMinutes);
+
+    if (isSessionValid) {
       document.write('<style>body{display:block !important;}</style>');
     } else {
+      sessionStorage.removeItem('captchaPassedTime');
       window.location.href = 'index.html';
     }
-  }
+  })();
 </script>
 </body>
 </html>

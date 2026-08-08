@@ -8,6 +8,7 @@
     <script>
         function onSuccess(token) {
             sessionStorage.setItem('captchaPassed', 'true');
+            sessionStorage.setItem('captchaPassedTime', Date.now().toString());
             window.location.href = "./main.html";
         }
     </script>
